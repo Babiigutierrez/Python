@@ -1,0 +1,32 @@
+from random import randint
+print('=-' *12)
+print('\33[1mVAMOS JOGAR PAR OU IMPAR\33[m')
+print('=-' *12)
+Cont = Soma =0
+while True:
+    Jogador = int(input('Diga um valor:'))
+    Computador = randint(0,11)
+    Escolha = ' '
+    while Escolha not in 'PI':
+        Escolha= str(input('Par ou Ímpar? [P/I]')).strip().upper()[0]
+    print('-' *24)
+    Soma = Computador + Jogador
+    if Soma %2 == 0:
+        print(f'Você jogou {Jogador} e o computador {Computador}. Total de {Soma} deu PAR.')
+        if Escolha == 'P':
+            print('Você GANHOU!')
+            Cont +=1
+        else:
+            print('Você PERDEU!')
+            break
+    else:
+        print(f'Você jogou {Jogador} e o computador {Computador}. Total de {Soma} deu Ímpar.')
+        if Escolha == 'I':
+            print('Você GANHOU!')
+            Cont +=1
+        else:
+            print('Você PERDEU!')
+            break
+    print('=-' *12)
+    print('Vamos jogar novamente...')
+print(f'GAME OVER!Você VENCEU {Cont} vezes.')
